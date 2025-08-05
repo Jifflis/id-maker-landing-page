@@ -1,82 +1,142 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Privacy Policy - ID Card Generator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #005a9c;
+      --accent-color: #0066cc;
+      --background-color: #ffffff;
+      --text-color: #333333;
+      --section-bg: #f0f4f8;
+      --border-radius: 8px;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
       margin: 0;
-      padding: 2rem;
-      background-color: #ffffff;
-      color: #333;
+      padding: 0;
     }
+
     .container {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border-radius: var(--border-radius);
     }
+
     h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #1f2937;
+      color: var(--primary-color);
+      margin-bottom: 10px;
     }
+
     h2 {
-      font-size: 1.25rem;
-      margin-top: 2rem;
-      color: #111827;
+      color: var(--primary-color);
+      margin-top: 30px;
     }
-    p {
-      margin-bottom: 1rem;
+
+    p, li {
+      line-height: 1.7;
     }
+
+    ul {
+      padding-left: 20px;
+    }
+
     a {
-      color: #3b82f6;
+      color: var(--accent-color);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
+    }
+
+    section {
+      background-color: var(--section-bg);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      margin-top: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.9em;
+      margin-top: 40px;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Privacy Policy</h1>
-    <p>Effective date: June 6, 2025</p>
+<div class="container">
+  <h1>Privacy Policy</h1>
+  <p><strong>Effective Date:</strong> August 5, 2025</p>
+  <p><strong>App Name:</strong> ID Card Generator</p>
 
-    <p>At ID Card Generator, we value your privacy and are committed to protecting your personal information. This Privacy Policy outlines how we collect, use, and safeguard your data when you use our services.</p>
+  <section>
+    <h2>1. No Account or Login Required</h2>
+    <p>You can use the app without creating an account. We do not ask for your name, email, or any login credentials.</p>
+  </section>
 
-    <h2>Information We Collect</h2>
-    <p>We may collect the following types of information:</p>
+  <section>
+    <h2>2. Local-Only Data Storage</h2>
+    <p>All data you enter for ID cards (names, photos, etc.) is saved <strong>only on your device’s local storage</strong>. We do <strong>not</strong> upload or store your personal data on any server.</p>
+  </section>
+
+  <section>
+    <h2>3. Device ID Collection</h2>
+    <p>We collect your <strong>device ID</strong> for internal technical purposes like:</p>
     <ul>
-      <li>Personal details entered manually (e.g., name, email, role)</li>
-      <li>Images uploaded for ID creation</li>
-      <li>Usage data and device information</li>
+      <li>Identifying crash reports</li>
+      <li>Debugging errors</li>
+      <li>Monitoring logs</li>
     </ul>
+    <p>This data is never shared or linked to your personal identity.</p>
+  </section>
 
-    <h2>How We Use Your Information</h2>
-    <p>Your data is used to:</p>
+  <section>
+    <h2>4. Error Logging and Diagnostics (Bugfender)</h2>
+    <p>We use <strong>Bugfender</strong>, a tool that helps us detect bugs and crashes in real-time. It may collect:</p>
     <ul>
-      <li>Generate and customize ID cards</li>
-      <li>Provide support and improve our app</li>
-      <li>Analyze usage for performance enhancements</li>
+      <li>App logs and crash details</li>
+      <li>Device model and OS</li>
+      <li>Device ID (anonymized)</li>
     </ul>
+    <p>These logs help us troubleshoot issues and improve reliability. Bugfender does not access any personal ID card data you create in the app.</p>
+    <p>Learn more: <a href="https://bugfender.com/privacy-policy/" target="_blank">Bugfender Privacy Policy</a></p>
+  </section>
 
-    <h2>Data Storage & Security</h2>
-    <p>All data is securely stored and access is restricted to authorized personnel only. We use encryption and industry best practices to protect your data.</p>
+  <section>
+    <h2>5. No Ads, No In-App Purchases</h2>
+    <p>Our app is <strong>100% free</strong> to use. There are no ads, no subscriptions, and no in-app purchases.</p>
+  </section>
 
-    <h2>Third-Party Services</h2>
-    <p>We do not sell your data. Some third-party tools may be used for analytics and storage, but only under strict compliance with privacy standards.</p>
+  <section>
+    <h2>6. Your Consent</h2>
+    <p>By using this app, you agree to the terms outlined in this Privacy Policy.</p>
+  </section>
 
-    <h2>Your Rights</h2>
-    <p>You can request to access, update, or delete your data at any time by contacting us at <a href="mailto:support@idcardgen.com">support@idcardgen.com</a>.</p>
+  <section>
+    <h2>7. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be reflected in the app or published on our official site.</p>
+  </section>
 
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised effective date.</p>
+  <section>
+    <h2>8. Contact Us</h2>
+    <p>If you have questions or concerns about your privacy, please contact us at:<br>
+      <strong>jifflisotomier@gmail.com</strong></p>
+  </section>
 
-    <p>By using our service, you agree to this Privacy Policy.</p>
-
-    <p><a href="index.html">← Back to Home</a></p>
+  <div class="footer">
+    &copy; 2025 ID Card Generator. All rights reserved.
   </div>
+</div>
 </body>
 </html>
