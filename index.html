@@ -112,7 +112,7 @@
     .video-container {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 ratio */
+      padding-bottom: 56.25%;
       margin: 2rem 0;
       border-radius: 16px;
       overflow: hidden;
@@ -127,12 +127,6 @@
       height: 100%;
       border: 0;
       border-radius: 16px;
-    }
-    .fallback-image {
-      width: 100%;
-      border-radius: 16px;
-      display: block;
-      margin: 2rem 0;
     }
     .footer {
       text-align: center;
@@ -153,88 +147,59 @@
 </head>
 <body>
 <main class="container" role="main">
-
   <h1 class="headline animate__animated animate__fadeInDown">🎉 Revolutionize the Way You Create ID Cards! 🪪</h1>
-
   <p class="subheading animate__animated animate__fadeInUp">
     Say goodbye to boring designs and time-consuming processes! <br />
-    Introducing the <strong>Ultimate ID Card Generator</strong> — designed to make professional ID creation fast, fun, and incredibly easy!
+    Introducing the <strong>Ultimate ID Card Generator</strong> — fast, fun, and incredibly easy!
   </p>
-
-  <section class="features" aria-label="Features of ID Card Generator">
+  <section class="features" aria-label="Features">
     <article class="feature animate__animated animate__fadeInLeft">
-      <img src="https://img.icons8.com/color/48/design--v1.png" alt="" aria-hidden="true" />
-      <div>
-        <strong>✅ 100+ Stunning Templates</strong>
-        Fully customizable to match your brand, event, or organization — no design skills needed!
-      </div>
+      <img src="https://img.icons8.com/color/48/design--v1.png" alt="" />
+      <div><strong>✅ 100+ Stunning Templates</strong> Fully customizable to match your brand — no design skills needed!</div>
     </article>
     <article class="feature animate__animated animate__fadeInRight">
-      <img src="https://img.icons8.com/color/48/add-property.png" alt="" aria-hidden="true" />
-      <div>
-        <strong>🧩 Create & Save Your Own Templates</strong>
-        Design once, use forever. Build your own custom templates to fit any need or style.
-      </div>
+      <img src="https://img.icons8.com/color/48/add-property.png" alt="" />
+      <div><strong>🧩 Create & Save Templates</strong> Design once, reuse anytime with your personalized style.</div>
     </article>
     <article class="feature animate__animated animate__fadeInLeft">
-      <img src="https://img.icons8.com/color/48/bulk-edit.png" alt="" aria-hidden="true" />
-      <div>
-        <strong>⚡ One-Tap Bulk Generation</strong>
-        Got a spreadsheet? Turn your CSV file into hundreds of ID cards instantly — perfect for schools, events, and companies.
-      </div>
+      <img src="https://img.icons8.com/color/48/bulk-edit.png" alt="" />
+      <div><strong>⚡ One-Tap Bulk Generation</strong> Generate hundreds of IDs from a spreadsheet — fast and efficient!</div>
     </article>
     <article class="feature animate__animated animate__fadeInRight">
-      <img src="https://img.icons8.com/color/48/edit-property.png" alt="" aria-hidden="true" />
-      <div>
-        <strong>✍️ Manual Generation Made Easy</strong>
-        Only need a few cards? Use manual input for quick, precise creation — no hassle.
-      </div>
+      <img src="https://img.icons8.com/color/48/edit-property.png" alt="" />
+      <div><strong>✍️ Manual Generation</strong> Need just a few? Input details manually with precision.</div>
     </article>
     <article class="feature animate__animated animate__fadeInLeft">
-      <img src="https://img.icons8.com/color/48/face-detection.png" alt="" aria-hidden="true" />
-      <div>
-        <strong>🤖 Smart Auto-Cropping with Face Detection</strong>
-        Upload photos in any size — we’ll auto-detect faces and crop them perfectly.
-      </div>
+      <img src="https://img.icons8.com/color/48/face-detection.png" alt="" />
+      <div><strong>🤖 Smart Face Auto-Cropping</strong> Upload any photo — faces are auto-detected and perfectly cropped!</div>
     </article>
     <article class="feature animate__animated animate__fadeInRight">
-      <img src="https://img.icons8.com/color/48/font.png" alt="" aria-hidden="true" />
-      <div>
-        <strong>🔠 Hundreds of Fonts at Your Fingertips</strong>
-        Personalize every detail with access to a massive font library.
-      </div>
+      <img src="https://img.icons8.com/color/48/font.png" alt="" />
+      <div><strong>🔠 Hundreds of Fonts</strong> Style every text with a rich library of fonts.</div>
     </article>
   </section>
 
-  <!-- Demo video embed (same video, reused) -->
-<!--  <div class="video-container" aria-label="Demo video of ID card generation">-->
-<!--    <iframe-->
-<!--            src="https://www.youtube-nocookie.com/embed/zKTNXUA7lWI?rel=0&showinfo=0"-->
-<!--            title="ID Card Generator Demo Video"-->
-<!--            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
-<!--            allowfullscreen-->
-<!--    ></iframe>-->
-<!--  </div>-->
-
-<!--  <p class="subheading animate__animated animate__fadeInUp">-->
-<!--    ✨ Whether you're creating IDs for a school, company, event, or organization — this tool has everything you need in one place.-->
-<!--  </p>-->
+  <!-- Embedded Videos -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/lF0ouuURMSk" title="ID Card Bulk Generation" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/elr-l8qVgg4" title="Auto-Cropping with Face Detection" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/u1BWP63rdo4" title="Manual Generation Made Easy" allowfullscreen></iframe>
+  </div>
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/ut8aq_DTJyw" title="Customizable Templates" allowfullscreen></iframe>
+  </div>
 
   <div class="cta animate__animated animate__zoomIn">
     <p><strong>💼 Fast. Flexible. Powerful.</strong></p>
-    <a
-            class="cta-button"
-            href="#"
-            role="button"
-            aria-label="Download ID Card Generator on App Store or Play Store (Coming Soon)"
-    >🚀 Download on App Store / Play Store (Coming Soon)</a
-    >
+    <a class="cta-button" href="#">🚀 Download on App Store / Play Store (Coming Soon)</a>
   </div>
 
-  <footer class="footer" role="contentinfo">
-    <p>
-      © 2025 ID Card Generator. <a href="privacy_policy.html">Privacy Policy</a>
-    </p>
+  <footer class="footer">
+    <p>© 2025 ID Card Generator. <a href="privacy_policy.html">Privacy Policy</a></p>
   </footer>
 </main>
 </body>
