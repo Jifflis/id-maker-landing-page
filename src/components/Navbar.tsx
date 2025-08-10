@@ -16,7 +16,7 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 bg-gray-900 text-white shadow-md z-50 ">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div className=" mx-auto px-8 py-3 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           <Image src="/logo.svg" alt="Logo" width={40} height={40} />
           <span className="font-bold text-xl">ID Maker</span>
