@@ -11,7 +11,7 @@ import 'swiper/css/pagination';
 
 export function Banner() {
     return (
-        <section className="min-h-screen bg-gradient-to-r from-gray-800 to-gray-700 flex flex-col md:flex-row items-center px-24 gap-6">
+        <section className="min-h-screen bg-gradient-to-r from-gray-800 to-gray-700 flex flex-col md:flex-row items-center px-8 gap-6">
             <div className="md:w-1/2 text-top md:text-left">
                 <Image
                     className="mx-auto"
