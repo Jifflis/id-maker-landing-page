@@ -11,15 +11,15 @@ import 'swiper/css/pagination';
 
 export function Banner() {
     return (
-        <section className="min-h-screen bg-gradient-to-r from-gray-800 to-gray-700 flex flex-col md:flex-row items-center px-8 gap-6">
+        <section className="min-h-screen bg-gradient-to-r from-gray-800 to-gray-700 flex flex-col md:flex-row items-center px-12 gap-6">
             <div className="md:w-1/2 text-top md:text-left">
                 <Image
-                    className="mx-auto"
                     src="/banner2.svg"
                     alt="Slide 2"
-                    width={600}   // Set an actual width
-                    height={200}  // Set an actual height
-                    style={{ objectFit: 'fill' }}
+                    width={0}
+                    height={0}
+                    sizes="(max-width: 640px) 100vw, 600px"
+                    className="w-full max-w-xl h-auto mb-4"
                     priority
                 />
                 <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white">
@@ -58,7 +58,7 @@ export function Banner() {
                             src="/banner1.svg"
                             alt="Slide 1"
                             fill
-                            style={{ objectFit: 'fill' }}
+                            style={{ objectFit: 'contain' }}
                             priority
                         />
                     </SwiperSlide>
@@ -68,7 +68,7 @@ export function Banner() {
                             src="/banner3.svg"
                             alt="Slide 3"
                             fill
-                            style={{ objectFit: 'fill' }}
+                            style={{ objectFit: 'contain' }}
                             priority
                         />
                     </SwiperSlide>
@@ -77,7 +77,7 @@ export function Banner() {
                             src="/banner4.svg"
                             alt="Slide 4"
                             fill
-                            style={{ objectFit: 'fill' }}
+                            style={{ objectFit: 'contain' }}
                             priority
                         />
                     </SwiperSlide>
@@ -86,7 +86,7 @@ export function Banner() {
                             src="/banner5.svg"
                             alt="Slide 5"
                             fill
-                            style={{ objectFit: 'fill' }}
+                            style={{ objectFit: 'contain' }}
                             priority
                         />
                     </SwiperSlide>

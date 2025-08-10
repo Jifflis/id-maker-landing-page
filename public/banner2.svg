@@ -16,7 +16,6 @@
 <line x1="220.448" y1="159.545" x2="254.84" y2="159.545" stroke="white" stroke-width="4.67423"/>
 <line y1="-2.33712" x2="34.3951" y2="-2.33712" transform="matrix(0.99992 -0.0126115 0.0117908 0.999931 220.448 174.028)" stroke="white" stroke-width="4.67423"/>
 <path d="M209.123 139.76V125.957H215.834C215.834 119.769 226.739 118.939 226.739 125.957H232.611V139.76H209.123Z" stroke="#FFFDFD" stroke-width="4.67423"/>
-<line x1="497" y1="359.5" x2="380" y2="359.5" stroke="white"/>
 <defs>
 <filter id="filter0_d_60_2" x="44.436" y="246.662" width="611.128" height="133.087" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
