@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { Banner } from "@/components/Banner";
 import { Navbar } from "@/components/Navbar";
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 
@@ -31,10 +30,10 @@ from-blue-900 from-[0%]
       {/* Top center heading */}
       <div className="text-center mb-24">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 mt-8 text-white">
-          Why You'll Love It?
+          Why You&apos;ll Love It?
         </h1>
         <p className="text-gray-200 max-w-2xl">
-          A <strong>free</strong> app with amazing features. Whether you're creating IDs for a school, company, event, or organization — this tool has everything you need in one place.
+          A <strong>free</strong> app with amazing features. Whether you&apos;re creating IDs for a school, company, event, or organization — this tool has everything you need in one place.
           💼 Fast. Flexible. Powerful.
         </p>
       </div>
