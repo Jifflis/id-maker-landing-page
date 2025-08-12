@@ -167,7 +167,7 @@ from-blue-900 from-[0%]
   );
 }
 
-export function PromoVideos() {
+function PromoVideos() {
   return (
     <section className="px-4 py-32 bg-gray-900 px-12">
       <h2 className="text-4xl font-black mb-18 text-center">Promotional Videos</h2>
@@ -231,7 +231,7 @@ export function PromoVideos() {
 }
 
 
-export function Footer() {
+function Footer() {
   return (
     <footer className="bg-black text-white py-8 pt-24">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
