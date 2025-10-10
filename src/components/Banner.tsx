@@ -28,20 +28,36 @@ export function Banner() {
                     Say goodbye to boring designs and time-consuming processes!
                     Introducing the <strong>Ultimate ID Maker</strong> — fast, fun, and incredibly easy!
                 </p>
-                <a
-                    href="https://play.google.com/store/apps/details?id=com.jeff.id.maker"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-4"
-                >
-                    <Image
-                        src="/google_play.png"
-                        alt="Get it on Google Play"
-                        width={135}
-                        height={40}
-                        className="hover:opacity-80 transition-opacity"
-                    />
-                </a>
+                <div className="flex items-center gap-4 mt-8">
+  <a
+    href="https://play.google.com/store/apps/details?id=com.jeff.id.maker"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Image
+      src="/google_play.png"
+      alt="Get it on Google Play"
+      width={135}
+      height={40}
+      className="hover:opacity-80 transition-opacity"
+    />
+  </a>
+
+  <a
+    href="https://apps.apple.com/us/app/id-maker-studio/id6753566835"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Image
+      src="/apple.jpg"
+      alt="Get it on App Store"
+      width={135}
+      height={40}
+      className="hover:opacity-80 transition-opacity"
+    />
+  </a>
+</div>
+
             </div>
 
             <div className="md:w-1/2 relative w-full h-100 md:h-100 overflow-hidden">
