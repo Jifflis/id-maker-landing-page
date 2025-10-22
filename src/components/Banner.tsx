@@ -56,6 +56,21 @@ export function Banner() {
       className="hover:opacity-80 transition-opacity"
     />
   </a>
+
+  <a
+    href="https://apps.microsoft.com/detail/9NM1S5XRR77R"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Image
+      src="/windows_store.png"
+      alt="Get it on Windows Store"
+      width={135}
+      height={90}
+      style={{ height: 45, width: 135, objectFit: "fill" }}
+       className="hover:opacity-80 transition-opacity rounded-lg"
+    />
+  </a>
 </div>
 
             </div>
