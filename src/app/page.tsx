@@ -22,9 +22,12 @@ from-blue-900 from-[0%]
             Why You&apos;ll Love It?
           </h1>
           <p className="text-gray-200 max-w-2xl">
-            A <strong>free</strong> app with amazing features. Whether you&apos;re creating IDs for a school, company, event, or organization — this tool has everything you need in one place.
-            💼 Fast. Flexible. Powerful.<br> Our app includes a smart auto-layout feature that automatically arranges ID card images — both front and back sides — in perfect alignment for printing. This ensures that every ID card is properly positioned on the page, saving you time and eliminating manual adjustments. </br>
-          </p>
+  A <strong>free</strong> app with amazing features. Whether you&apos;re creating IDs for a school, company, event, or organization — this tool has everything you need in one place.
+  💼 Fast. Flexible. Powerful.
+  <br />
+  Our app includes a smart auto-layout feature that automatically arranges ID card images — both front and back sides — in perfect alignment for printing. This ensures that every ID card is properly positioned on the page, saving you time and eliminating manual adjustments.
+</p>
+
         </div>
 
         {/* Side-by-side section */}
