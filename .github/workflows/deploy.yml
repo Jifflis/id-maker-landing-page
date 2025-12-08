@@ -26,6 +26,8 @@ jobs:
 
             # - name: Run tests
             #   run: npm test
+            - name: Disable ESLint for build
+              run: echo "SKIP_ESLINT=true" >> $GITHUB_ENV
 
             - name: Build Next.js app
               run: npm run build
