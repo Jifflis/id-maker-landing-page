@@ -45,8 +45,8 @@ jobs:
 
                 git fetch origin main
                 git reset --hard origin/main
-                
+
                 npm ci
                 pm run build
-                pm2 restart id-maker-landing-page
+                /usr/bin/pm2 restart id-maker-landing-page
                 
