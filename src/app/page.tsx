@@ -1,12 +1,26 @@
+"use client";
 
 import Image from 'next/image';
 import { Banner } from "@/components/Banner";
 import { Navbar } from "@/components/Navbar";
+import { SimpleAppLogger } from "@/utils/SimpleAppLogger";
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { useEffect } from "react";
 
 
 export default function HomePage() {
+
+   useEffect(() => {
+    var key = process.env.NEXT_PUBLIC_LOGGER_API_KEY || "" ;
+
+    console.log('the key', key);
+
+
+    SimpleAppLogger.init({ key:key});
+    SimpleAppLogger.info("Home page loaded", "homepage");
+  }, []);
+
 
   function Features() {
     return (

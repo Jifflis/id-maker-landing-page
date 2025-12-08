@@ -4,11 +4,13 @@ import React from "react";
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import { SimpleAppLogger } from "@/utils/SimpleAppLogger";
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 
 export function Banner() {
+    
     return (
         <section className="min-h-screen bg-gradient-to-r from-gray-800 to-gray-700 flex flex-col md:flex-row items-center px-8 gap-6">
             <div className="md:w-1/2 text-top md:text-left">
@@ -33,6 +35,9 @@ export function Banner() {
     href="https://play.google.com/store/apps/details?id=com.jeff.id.maker"
     target="_blank"
     rel="noopener noreferrer"
+     onClick={(e) => {
+    SimpleAppLogger.info("Google play clicked", "Google Play");
+  }}
   >
     <Image
       src="/google_play.png"
@@ -47,6 +52,9 @@ export function Banner() {
     href="https://apps.apple.com/us/app/id-maker-studio/id6753566835"
     target="_blank"
     rel="noopener noreferrer"
+    onClick={(e) => {
+    SimpleAppLogger.info("AppStore clicked", "App Store");
+  }}
   >
     <Image
       src="/apple.jpg"
@@ -61,6 +69,9 @@ export function Banner() {
     href="https://apps.microsoft.com/detail/9NM1S5XRR77R"
     target="_blank"
     rel="noopener noreferrer"
+    onClick={(e) => {
+    SimpleAppLogger.info("Micrsoft store clicked", "Microsoft Store");
+  }}
   >
     <Image
       src="/windows_store.png"
