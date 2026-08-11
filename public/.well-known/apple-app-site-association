@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["76AMC9QKQE.com.jeff.simple-app-logger"],
+        "components": [
+          {
+            "/": "/verify-email",
+            "comment": "Open email verification links in App Logger Dashboard"
+          }
+        ]
+      }
+    ]
+  }
+}

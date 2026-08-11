@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.jeff.simple_app_logger",
+      "sha256_cert_fingerprints": [
+        "E1:48:99:E1:9D:E6:BA:B6:F3:35:DD:57:DB:53:92:CB:E7:43:1B:C5:A3:69:07:08:08:98:DC:BA:ED:CD:4E:40"
+      ]
+    }
+  }
+]

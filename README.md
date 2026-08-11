@@ -2,6 +2,17 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+Set the optional API origin for local or staging environments:
+
+```bash
+NEXT_PUBLIC_API_BASE_URL=https://api.id-makers.com
+```
+
+Email verification links use `/verify-email?token=...`. The files under
+`public/.well-known` must be deployed without redirects at the same paths so
+Android App Links and Apple Universal Links can associate `www.id-makers.com`
+with the native application.
+
 First, run the development server:
 
 ```bash
