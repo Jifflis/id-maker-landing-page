@@ -4,9 +4,8 @@
     "target": {
       "namespace": "android_app",
       "package_name": "com.jeff.simple_app_logger",
-      "sha256_cert_fingerprints": [
-        "E1:48:99:E1:9D:E6:BA:B6:F3:35:DD:57:DB:53:92:CB:E7:43:1B:C5:A3:69:07:08:08:98:DC:BA:ED:CD:4E:40"
-      ]
+      "sha256_cert_fingerprints":
+        ["1F:EB:C0:AA:60:E5:57:BC:FF:04:65:2C:91:F8:EC:22:80:B0:73:BB:4F:D8:B6:EB:D9:DD:94:A6:95:C1:A7:C3"]
     }
   }
 ]
