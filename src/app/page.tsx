@@ -1,295 +1,160 @@
 "use client";
 
-import Image from 'next/image';
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
 import { Banner } from "@/components/Banner";
 import { Navbar } from "@/components/Navbar";
 import { SimpleAppLogger } from "@/utils/SimpleAppLogger";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { useEffect } from "react";
 
+const features = [
+  {
+    number: "01",
+    kicker: "Start beautifully",
+    title: "100+ templates for every occasion",
+    description: "Choose a polished starting point for schools, teams, companies, events, and communities—then make every detail your own.",
+    image: "/templates.svg",
+    alt: "A selection of professional ID card templates",
+    tags: ["Fully editable", "Multiple formats", "Brand ready"],
+  },
+  {
+    number: "02",
+    kicker: "Make it yours",
+    title: "Create once. Reuse forever.",
+    description: "Build and save custom templates with your colors, fields, logo, and layout. Your next batch starts exactly where you left off.",
+    image: "/create_template.svg",
+    alt: "Custom template editor in ID Maker",
+    tags: ["Custom branding", "Saved layouts", "Easy editing"],
+  },
+  {
+    number: "03",
+    kicker: "Work at scale",
+    title: "Turn a CSV into hundreds of IDs",
+    description: "Import a spreadsheet and generate an entire set in one go. It is fast, consistent, and ideal for larger organizations.",
+    image: "/csv_generator.svg",
+    alt: "Bulk ID generation using CSV data",
+    tags: ["CSV import", "One-tap generation", "Batch export"],
+  },
+  {
+    number: "04",
+    kicker: "Stay flexible",
+    title: "Quick manual creation when you need it",
+    description: "Making just a few cards? Enter details directly, preview changes instantly, and export without setting up a spreadsheet.",
+    image: "/manual.svg",
+    alt: "Manual ID card creation interface",
+    tags: ["Instant preview", "Simple fields", "Fast export"],
+  },
+  {
+    number: "05",
+    kicker: "Look consistent",
+    title: "Smart cropping that finds the face",
+    description: "Bring photos in at any size. Face detection centers and crops portraits into consistent, professional headshots automatically.",
+    image: "/crop_image.svg",
+    alt: "Automatic face detection and photo cropping",
+    tags: ["Face detection", "Auto-centering", "Consistent photos"],
+  },
+];
+
+const videos = [
+  { id: "lF0ouuURMSk", title: "Bulk generation", label: "From CSV to finished cards" },
+  { id: "elr-l8qVgg4", title: "Smart auto-cropping", label: "Clean photos in a few clicks" },
+  { id: "u1BWP63rdo4", title: "Manual generation", label: "Create one card from scratch" },
+  { id: "ut8aq_DTJyw", title: "Custom templates", label: "Build a reusable design" },
+];
 
 export default function HomePage() {
-
-   useEffect(() => {
-    var key = process.env.NEXT_PUBLIC_LOGGER_API_KEY || "" ;
-
-    console.log('the key', key);
-
-
-    SimpleAppLogger.init({ key:key});
+  useEffect(() => {
+    SimpleAppLogger.init({ key: process.env.NEXT_PUBLIC_LOGGER_API_KEY || "" });
     SimpleAppLogger.info("Home page loaded", "homepage");
   }, []);
 
-
-  function Features() {
-    return (
-      <section className="bg-gradient-to-b 
-from-blue-900 from-[0%] 
-  via-blue-900 via-[1%] 
-  to-gray-900 
-  flex flex-col items-center py-8">
-
-        {/* Top center heading */}
-        <div className="text-center mb-24">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 mt-8 text-white">
-            Why You&apos;ll Love It?
-          </h1>
-          <p className="text-gray-200 max-w-2xl">
-  A <strong>free</strong> app with amazing features. Whether you&apos;re creating IDs for a school, company, event, or organization — this tool has everything you need in one place.
-  💼 Fast. Flexible. Powerful.
-  <br />
-  Our app includes a smart auto-layout feature that automatically arranges ID card images — both front and back sides — in perfect alignment for printing. This ensures that every ID card is properly positioned on the page, saving you time and eliminating manual adjustments.
-</p>
-
-        </div>
-
-        {/* Side-by-side section */}
-        <div className="flex flex-col md:flex-row items-center  w-full max-w-6xl px-6 mb-24">
-
-          {/* Right: Feature text */}
-          <div className="md:w-1/2 md:text-right">
-            <h2 className="text-x2 sm:text-3xl md:text-4xl font-bold mb-4 text-white">
-              100+ Stunning Templates
-            </h2>
-            <p className="mb-8 text-gray-200">
-              Fully customizable to match your brand, event, or organization — no design skills needed!
-            </p>
-          </div>
-
-          {/* Right: Image */}
-          <div className="md:w-1/2 relative w-full h-64 md:h-96">
-            <Image
-              src="/templates.svg"
-              alt="templates"
-              fill
-              style={{ objectFit: 'contain' }}
-              priority
-            />
-          </div>
-        </div>
-
-
-        <div className="flex flex-col md:flex-row items-center  w-full max-w-6xl px-6 mb-24">
-
-          {/* Right: Feature text */}
-          <div className="md:w-1/2 relative w-full h-64 md:h-96">
-            <Image
-              src="/create_template.svg"
-              alt="create_template"
-              fill
-              style={{ objectFit: 'contain' }}
-              priority
-            />
-          </div>
-
-          {/* Right: Image */}
-          <div className="md:w-1/2 md:text-left">
-            <h2 className="text-x2 sm:text-3xl md:text-4xl font-bold mb-4 text-white">
-              Create & Save Your Own Templates
-            </h2>
-            <p className="mb-8 text-gray-200">
-              Design once, use forever. Build your own custom templates to fit any need or style.
-            </p>
-          </div>
-
-        </div>
-
-        {/* Side-by-side section */}
-        <div className="flex flex-col md:flex-row items-center  w-full max-w-6xl px-6 mb-24">
-
-          {/* Right: Feature text */}
-          <div className="md:w-1/2 md:text-right">
-            <h2 className="text-x2 sm:text-3xl md:text-4xl font-bold mb-4 text-white">
-              One-Tap Bulk Generation
-            </h2>
-            <p className="mb-8 text-gray-200">
-              Got a spreadsheet? Turn your CSV file into hundreds of ID cards instantly — perfect for schools, events, and companies.
-            </p>
-          </div>
-
-          {/* Right: Image */}
-          <div className="md:w-1/2 relative w-full h-64 md:h-96">
-            <Image
-              src="/csv_generator.svg"
-              alt="csv_generator"
-              fill
-              style={{ objectFit: 'contain' }}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col md:flex-row items-center  w-full max-w-6xl px-6 mb-24">
-
-          {/* Right: Feature text */}
-          <div className="md:w-1/2 relative w-full h-64 md:h-96">
-            <Image
-              src="/manual.svg"
-              alt="manual"
-              fill
-              style={{ objectFit: 'contain' }}
-              priority
-            />
-          </div>
-
-          {/* Right: Image */}
-          <div className="md:w-1/2 md:text-left">
-            <h2 className="text-x2 sm:text-3xl md:text-4xl font-bold mb-4 text-white">
-              Manual Generation Made Easy
-            </h2>
-            <p className="mb-8 text-gray-200">
-              Only need a few cards? Use manual input for quick, precise creation — no hassle.
-            </p>
-          </div>
-
-        </div>
-
-        {/* Side-by-side section */}
-        <div className="flex flex-col md:flex-row items-center  w-full max-w-6xl px-6 mb-24">
-
-          {/* Right: Feature text */}
-          <div className="md:w-1/2 md:text-right">
-            <h2 className="text-x2 sm:text-3xl md:text-4xl font-bold mb-4 text-white">
-              Smart Auto-Cropping with Face Detection
-            </h2>
-            <p className="mb-8 text-gray-200">
-              Import photos in any size !Q— we’ll auto-detect faces and crop them perfectly.
-            </p>
-          </div>
-
-          {/* Right: Image */}
-          <div className="md:w-1/2 relative w-full h-64 md:h-96">
-            <Image
-              src="/crop_image.svg"
-              alt="crop_image"
-              fill
-              style={{ objectFit: 'contain' }}
-              priority
-            />
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  function PromoVideos() {
-    return (
-      <section className="px-4 py-32 bg-gray-900 px-12">
-        <h2 className="text-4xl font-black mb-18 text-center">Promotional Videos</h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-          {/* Video 1 */}
-          <div className="text-center">
-            <div className="relative w-full pb-[56.25%] h-0 overflow-hidden rounded-lg">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/lF0ouuURMSk"
-                title="Bulk Generation"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <h3 className="mt-3 text-lg font-semibold">Bulk Generation</h3>
-          </div>
-
-          {/* Video 2 */}
-          <div className="text-center">
-            <div className="relative w-full pb-[56.25%] h-0 overflow-hidden rounded-lg">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/elr-l8qVgg4"
-                title="Auto-Cropping "
-                allowFullScreen
-              ></iframe>
-            </div>
-            <h3 className="mt-3 text-lg font-semibold">Auto-Cropping </h3>
-          </div>
-
-          {/* Video 3 */}
-          <div className="text-center">
-            <div className="relative w-full pb-[56.25%] h-0 overflow-hidden rounded-lg">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/u1BWP63rdo4"
-                title="Manual Generation"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <h3 className="mt-3 text-lg font-semibold">Manual Generation</h3>
-          </div>
-
-          {/* Video 4 */}
-          <div className="text-center">
-            <div className="relative w-full pb-[56.25%] h-0 overflow-hidden rounded-lg">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/ut8aq_DTJyw"
-                title="Customizable Templates"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <h3 className="mt-3 text-lg font-semibold">Customizable Templates</h3>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  function Footer() {
-    return (
-      <footer className="bg-black text-white py-8 pt-24">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
-
-          {/* Column 1 */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">About Us</h3>
-            <p className="text-sm text-gray-400">
-              This app helps you generate ID cards quickly and efficiently for free. Ideal for students, companies, and event organizers.
-            </p>
-          </div>
-
-          {/* Column 2 */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Donation</h3>
-            <p className="text-sm text-gray-400 mb-3">
-              Your support helps us continue improving this app and keep it free for everyone.
-            </p>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>PayPal: jifflisotomier@gmail.com</li>
-              <li>Wise: jifflisotomier@gmail.com</li>
-              <li>Payoneer: jifflisotomier@gmail.com</li>
-              <li>GCash: 09482845780</li>
-            </ul>
-          </div>
-
-          {/* Column 3 - Contact */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>Email: jifflisotomier@gmail.com</li>
-              <li>WhatsApp: +639482845780</li>
-              <li>Telegram: +639482845780</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom bar */}
-        <div className="mt-24 border-t border-gray-700 pt-4 text-center text-sm text-gray-500">
-          © {new Date().getFullYear()} ID Maker. Developed by Jeffrey C. Abaniel. All rights reserved.
-        </div>
-      </footer>
-    );
-  }
-
-
   return (
-    <main className="min-h-screen bg-white flex flex-col">
+    <main>
       <Navbar />
       <Banner />
-      <Features />
-      <PromoVideos />
-      <Footer />
+
+      <section className="features-section" id="features">
+        <div className="section-heading">
+          <span className="section-kicker">Everything you need</span>
+          <h2>From blank canvas to print-ready in minutes.</h2>
+          <p>Powerful tools stay out of your way, so you can focus on creating IDs people are proud to wear.</p>
+        </div>
+
+        <div className="features-list">
+          {features.map((feature, index) => (
+            <article className={`feature-row ${index % 2 ? "feature-reverse" : ""}`} key={feature.title}>
+              <div className="feature-image-wrap">
+                <span className="feature-number">{feature.number}</span>
+                <Image src={feature.image} alt={feature.alt} fill sizes="(max-width: 768px) 90vw, 540px" />
+              </div>
+              <div className="feature-copy">
+                <span className="feature-kicker">{feature.kicker}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+                <div className="tag-list">
+                  {feature.tags.map((tag) => <span key={tag}><b>✓</b>{tag}</span>)}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="steps-section" id="how-it-works">
+        <div className="steps-shell">
+          <div className="steps-heading">
+            <span className="section-kicker light">A simpler workflow</span>
+            <h2>Three steps. One polished result.</h2>
+            <p>No complicated setup and no steep learning curve.</p>
+          </div>
+          <div className="steps-grid">
+            <div className="step-card"><span>01</span><div className="step-icon">▦</div><h3>Pick a template</h3><p>Start from a professionally designed layout or open one you saved.</p></div>
+            <div className="step-card"><span>02</span><div className="step-icon">✎</div><h3>Add your details</h3><p>Enter them manually or import a CSV to create an entire batch.</p></div>
+            <div className="step-card"><span>03</span><div className="step-icon">↗</div><h3>Export and print</h3><p>Auto-layout aligns both sides so every card is ready to print.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section className="videos-section">
+        <div className="section-heading video-heading">
+          <span className="section-kicker">See it in action</span>
+          <h2>Learn the essentials in a few minutes.</h2>
+          <p>Short, practical walkthroughs to help you get more from ID Maker.</p>
+        </div>
+        <div className="video-grid">
+          {videos.map((video, index) => (
+            <article className="video-card" key={video.id}>
+              <div className="video-frame">
+                <iframe src={`https://www.youtube-nocookie.com/embed/${video.id}`} title={video.title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+              </div>
+              <div className="video-meta"><span>0{index + 1}</span><div><h3>{video.title}</h3><p>{video.label}</p></div></div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="final-cta">
+        <div className="final-cta-inner">
+          <Image src="/logo.svg" alt="" width={64} height={64} />
+          <span className="section-kicker light">Ready when you are</span>
+          <h2>Your next batch of ID cards can be done today.</h2>
+          <p>Download ID Maker for free and turn hours of repetitive work into a few simple steps.</p>
+          <a href="#stores" className="button button-white">Choose your platform <span>↑</span></a>
+        </div>
+      </section>
+
+      <footer className="site-footer">
+        <div className="footer-main">
+          <div className="footer-brand">
+            <Link href="/" className="brand"><Image src="/logo.svg" alt="" width={44} height={44} /><span>ID Maker</span></Link>
+            <p>Professional ID cards without the complicated workflow.</p>
+          </div>
+          <div><h3>Product</h3><a href="#features">Features</a><a href="#how-it-works">How it works</a><a href="#download">Download</a></div>
+          <div><h3>Support</h3><a href="mailto:jifflisotomier@gmail.com">Contact us</a><Link href="/privacy-policy">Privacy policy</Link></div>
+          <div><h3>Support the project</h3><p>ID Maker is free. Donations help us keep improving it.</p><a className="footer-email" href="mailto:jifflisotomier@gmail.com">jifflisotomier@gmail.com</a></div>
+        </div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} ID Maker. All rights reserved.</span><span>Designed and developed by Jeffrey C. Abaniel</span></div>
+      </footer>
     </main>
   );
 }
