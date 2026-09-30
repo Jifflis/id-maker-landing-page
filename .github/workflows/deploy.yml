@@ -27,6 +27,8 @@ jobs:
 
           APP_DIR="/var/www/id-makers"
           BRANCH="main"
+          SERVICE_NAME="id-makers"
+          APP_PORT="3000"
 
           echo "--- Moving to landing page directory ---"
           cd "$APP_DIR"
@@ -43,27 +45,33 @@ jobs:
           npm run build
 
           echo "--- Restarting landing page service ---"
-          systemctl restart id-makers
+          systemctl restart "$SERVICE_NAME"
 
           echo "--- Checking service ---"
-          systemctl is-active --quiet id-makers
+          systemctl is-active --quiet "$SERVICE_NAME"
 
           echo "--- Testing local Next.js server ---"
-          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
-            http://127.0.0.1:3000/)
+          for attempt in {1..12}; do
+            if curl --fail --silent --show-error --max-time 5 \
+              "http://127.0.0.1:${APP_PORT}/" >/dev/null; then
+              echo "Local landing page is ready"
+              break
+            fi
 
-          echo "Local landing page returned HTTP $HTTP_CODE"
+            if [ "$attempt" -eq 12 ]; then
+              echo "❌ Local landing page health check failed"
+              systemctl status "$SERVICE_NAME" --no-pager || true
+              journalctl -u "$SERVICE_NAME" -n 50 --no-pager || true
+              exit 1
+            fi
+
+            echo "Waiting for local server (attempt $attempt/12)..."
+            sleep 5
+          done
 
           echo "--- Testing production website ---"
-          HTTPS_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
-            https://id-makers.com/)
-
-          echo "Production website returned HTTP $HTTPS_CODE"
-
-          if [ "$HTTPS_CODE" != "200" ]; then
-            echo "❌ Production health check failed"
-            exit 1
-          fi
+          curl --fail --silent --show-error --location --retry 5 \
+            --retry-delay 3 https://id-makers.com/ >/dev/null
 
           echo "✅ Landing page deployment completed successfully!"
           EOF
