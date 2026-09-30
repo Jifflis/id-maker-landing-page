@@ -62,9 +62,12 @@ const videos = [
   { id: "ut8aq_DTJyw", title: "Custom templates", label: "Build a reusable design" },
 ];
 
+const loggerApiKey =
+  "alk_a02da5c3_ud8_j38pIiWmBfQvJtVJS2hkdgNGRYH0b9FYgVQ0kn0";
+
 export default function HomePage() {
   useEffect(() => {
-    SimpleAppLogger.init({ key: process.env.NEXT_PUBLIC_LOGGER_API_KEY || "" });
+    SimpleAppLogger.init({ key: loggerApiKey });
     SimpleAppLogger.info("Home page loaded", "homepage");
   }, []);
 
