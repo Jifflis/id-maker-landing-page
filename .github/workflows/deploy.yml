@@ -19,9 +19,17 @@ jobs:
           ssh-private-key: ${{ secrets.VPS_SSH_KEY }}
 
       - name: Deploy to VPS
+        env:
+          NEXT_PUBLIC_LOGGER_API_KEY: ${{ secrets.NEXT_PUBLIC_LOGGER_API_KEY }}
         run: |
+          if [ -z "$NEXT_PUBLIC_LOGGER_API_KEY" ]; then
+            echo "NEXT_PUBLIC_LOGGER_API_KEY secret is not configured"
+            exit 1
+          fi
+
           ssh -o StrictHostKeyChecking=no \
-            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} \
+            "NEXT_PUBLIC_LOGGER_API_KEY='$NEXT_PUBLIC_LOGGER_API_KEY' bash -se" << 'EOF'
 
           set -e
 

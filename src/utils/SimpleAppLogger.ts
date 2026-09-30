@@ -12,6 +12,11 @@ export class SimpleAppLogger {
     process.env.NEXT_PUBLIC_LOGGER_URL || "https://api.app-logger.com"
   ).replace(/\/$/, "");
 
+  private static getAuthorizationHeader(): string {
+    const apiKey = this.apiKey.trim();
+    return apiKey.startsWith("ApiKey ") ? apiKey : `ApiKey ${apiKey}`;
+  }
+
 
   // Initialize logger
   static async init({ key }: { key: string }) {
@@ -74,7 +79,7 @@ export class SimpleAppLogger {
   private static async postInitialVariables() {
   const headers = {
     "Content-Type": "application/json",
-    Authorization: this.apiKey,
+    Authorization: this.getAuthorizationHeader(),
   };
 
   const instanceId = this.getInstanceId();
@@ -133,7 +138,7 @@ export class SimpleAppLogger {
     const url = `${this.baseUrl}/api/logs`;
     const headers = {
       "Content-Type": "application/json",
-      Authorization: this.apiKey,
+      Authorization: this.getAuthorizationHeader(),
     };
 
     const body = {
