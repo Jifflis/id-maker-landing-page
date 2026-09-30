@@ -8,7 +8,9 @@ type LogLevel = "info" | "error" | "warning";
 export class SimpleAppLogger {
   private static apiKey: string;
   private static isInit = false;
-  private static baseUrl = process.env.NEXT_PUBLIC_LOGGER_URL;
+  private static baseUrl = (
+    process.env.NEXT_PUBLIC_LOGGER_URL || "https://api.app-logger.com"
+  ).replace(/\/$/, "");
 
 
   // Initialize logger
@@ -44,6 +46,30 @@ export class SimpleAppLogger {
     return new Date().toISOString();
   }
 
+  private static getBrowserDeviceName(): string {
+    if (typeof navigator === "undefined") return "Web browser";
+
+    const userAgent = navigator.userAgent;
+    let browser = "Web browser";
+    let operatingSystem = "Web";
+
+    if (/SamsungBrowser\//.test(userAgent)) browser = "Samsung Internet";
+    else if (/Edg(?:A|iOS)?\//.test(userAgent)) browser = "Edge";
+    else if (/OPR\//.test(userAgent)) browser = "Opera";
+    else if (/Firefox\/|FxiOS\//.test(userAgent)) browser = "Firefox";
+    else if (/Chrome\/|CriOS\//.test(userAgent)) browser = "Chrome";
+    else if (/Safari\//.test(userAgent)) browser = "Safari";
+
+    if (/Android/.test(userAgent)) operatingSystem = "Android";
+    else if (/iPhone|iPad|iPod/.test(userAgent)) operatingSystem = "iOS";
+    else if (/Windows NT/.test(userAgent)) operatingSystem = "Windows";
+    else if (/CrOS/.test(userAgent)) operatingSystem = "ChromeOS";
+    else if (/Macintosh|Mac OS X/.test(userAgent)) operatingSystem = "macOS";
+    else if (/Linux/.test(userAgent)) operatingSystem = "Linux";
+
+    return `${browser} on ${operatingSystem}`;
+  }
+
   // Post initial device info
   private static async postInitialVariables() {
   const headers = {
@@ -52,11 +78,11 @@ export class SimpleAppLogger {
   };
 
   const instanceId = this.getInstanceId();
-  const deviceName = typeof navigator !== "undefined" ? navigator.platform : "unknown";
+  const deviceName = this.getBrowserDeviceName();
   const deviceModel =
-    typeof navigator !== "undefined" && "userAgentData" in navigator
-      ? (navigator as any).userAgentData.brands.map((b: any) => b.brand).join(", ")
-      : navigator?.userAgent || "unknown";
+    typeof navigator !== "undefined"
+      ? navigator.userAgent.slice(0, 512)
+      : "unknown";
 
   const platform = "web";
 
